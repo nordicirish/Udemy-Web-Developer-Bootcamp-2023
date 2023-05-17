@@ -8,3 +8,4 @@
 - CSS
 - JQuery
 - Bootstrap
+- Google Fonts
