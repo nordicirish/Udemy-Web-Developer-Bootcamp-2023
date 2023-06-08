@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: aliceblue;
+      }
+
+      container {
+        min-width: 300px;
+        border-radius: 10px;
+        background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      #app {
+        display: none;
+        min-width: 200px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      p {
+        color: #666;
+        font-family: Arial, sans-serif;
+        margin: 5px 0;
+      }
+      p.new-message {
+        color: green;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      p.delete-message {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="text"] {
+        padding: 5px;
+        font-family: Arial, sans-serif;
+        margin-bottom: 10px;
+      }
+    </style>
+
+    <title>Todo App</title>
+  </head>
+  <body>
+    <container>
+      <h1>Todo List</h1>
+      <ul>
+        <li>"new" - Add A Todo</li>
+        <li>"list" - List All Todos</li>
+        <li>"delete" - Remove Specific Todo</li>
+      </ul>
+      <label for="input">Enter your commands</label>
+      <input
+        type="text"
+        id="input"
+        onkeyup="handleUserInput(event)"
+        autofocus
+      />
+      <div id="todoActionContainer" style="display: none">
+        <label for="todoInput" id="todoActionLabel"></label>
+        <input type="text" id="todoInput" />
+        <button onclick="performTodoAction()">Submit</button>
+      </div>
+
+      <div id="app"></div>
+    </container>
+    <script src="app.js"></script>
+  </body>
+</html>
